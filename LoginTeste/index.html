@@ -1,0 +1,68 @@
+<!--HTML do login-->
+<html>
+<head>
+    <title>Firebase Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+    <!-- Tela de login -->
+    <div id="login_div" class="main-div">
+        <h3>Firebase Web Login Example</h3>
+        <input type="email" placeholder="Email..." id="email_field"/>
+        <input type="password" placeholder="Password..." id="password_field"/>
+
+        <button onclick="login()">Login to Account</button>
+    </div>
+
+    <!-- Tela do Usuário -->
+    <div id="user_div" class="loggedin-div">
+        <h3>Welcome User</h3>
+        <p id="user_para">Welcome to Firebase Web Login Example. You're currently logged in.</p>
+
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!--Registrar-->
+    <div id="register_div" class="register-div">
+        <input  placeholder="Email..." id="newEmail_field"/>
+        <input  placeholder="Password..." id="newPassword_field"/>
+        <button onclick="register()">Logn In</button>
+    </div>
+    
+
+    <!--Interligacao com o JavaScripts-->
+    <script src="index.js"></script>
+
+    <!-- Configuracoes iniciais do Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
+
+    <script>
+            
+            var firebaseConfig = {
+              apiKey: "AIzaSyBISH4C56RSp0fk0XFjQB4-YCAJT6IqK2M",
+              authDomain: "fir-web-login-bb7b3.firebaseapp.com",
+              databaseURL: "https://fir-web-login-bb7b3.firebaseio.com",
+              projectId: "fir-web-login-bb7b3",
+              storageBucket: "fir-web-login-bb7b3.appspot.com",
+              messagingSenderId: "594323858770",
+              appId: "1:594323858770:web:75820676bcbcd586b0868b",
+              measurementId: "G-ZFJ2NQFSRB"
+            };
+            
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+
+    </script>
+    
+    
+</body>
+
+
+
+</html>

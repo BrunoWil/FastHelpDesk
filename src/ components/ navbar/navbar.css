@@ -10,3 +10,7 @@
 .nav-item a:hover{
     color: rgb(4, 4, 138);
 }
+
+.btn {
+   margin-left: 1500%;
+}

@@ -10,3 +10,10 @@
 .nav-item a:hover{
     color: rgb(4, 4, 138);
 }
+
+.btn {
+    position: fixed;
+    right: 5px;
+    width: 6em;
+    
+}

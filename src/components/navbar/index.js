@@ -15,7 +15,7 @@ function Navbar(){
                     <a className="nav-link" href="#">Home</a>
                 </li>
 
-                <button type="button" class="btn btn-dark">Exit</button>
+                <button type="button" class="btn btn-dark">Sign out</button>
                 
                 </ul>
                 

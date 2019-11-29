@@ -18,6 +18,14 @@
     text-align: center;
 }
 
+.themed-grid-col2 {
+    padding: 10px 0% 10px;
+    background-color: #b5bec8;
+    border: 1px solid #627894;
+    text-align: center;
+    color: #ffffff;
+}
+
 .bt {
     position: fixed; 
     right: 2%; 

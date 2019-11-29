@@ -1,5 +1,5 @@
 {
   "database": {
-    "rules": "firestore.rules"
+    "rules": "database.rules.json"
   }
 }

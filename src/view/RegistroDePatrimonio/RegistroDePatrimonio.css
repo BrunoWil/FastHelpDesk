@@ -1,0 +1,43 @@
+
+.row {
+    padding: 0% 0% 0%;
+    margin: 0% 5mm 0%;
+}
+
+.setor h5{
+    color: #080808;
+    text-align: center;
+    padding: 5% 0% 5%;
+    background-color: #627894;
+    border: #627894;
+    margin: 0% 5mm 0%;
+}
+
+.themed-grid-col {
+    padding: 10px 10px 10px;
+    background-color: #82b2c8;
+    border: 1px solid #627894;
+    text-align: center;
+}
+
+.themed-grid-col2 {
+    padding: 10px 0% 10px;
+    background-color: #b5bec8;
+    border: 1px solid #627894;
+    text-align: center;
+    color: #ffffff;
+}
+
+.bt {
+    position: fixed; 
+    right: 2%; 
+    bottom: 0;
+    z-index:10;
+    background-color: #627894; 
+    border-radius: 5px;
+}
+
+.bt:hover{
+    background-color: black;
+    color: #ffffff;
+}

@@ -1,0 +1,29 @@
+.login-content{
+	width: 100%;
+	padding: 15%;
+	margin: auto;
+	background-color: #47A7D1;
+	height: 100vh;
+}
+
+.form-control{
+	background-color: #fffdd6;
+}
+
+.opcoes-login a{
+	text-decoration: none;
+	color: #fffdd6;
+}
+
+.raio{
+	margin-left: 45%;
+}
+
+.logoimg{
+	margin-top: -50%;
+}
+
+.senhanovaly{
+	margin-left: 34%;
+}
+

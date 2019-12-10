@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Navbar from '../../navbar/index';
+import Navbar from '../../components/navbar/index';
 import '../UsuariosCadastradosTecnico/UsuariosCadastradosTecnico.css';
 import firebase from 'firebase';
 import '../../config/firebase';

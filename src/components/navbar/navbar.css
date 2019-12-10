@@ -1,0 +1,41 @@
+.navbar-brand{
+	color: #FDF87F;
+}
+
+.navbar{
+	background-color: #47A7D1;
+}
+
+.logo{
+	color: #FDF87F;
+}
+
+.nav-item { 
+	margin: 0 20px;
+	
+}
+
+.nav-item a{ 
+	color: #fff;
+	transition: .3s ease-in;
+}
+
+.nav-item a:hover{ 
+	color: #FDF87F;
+}
+
+.navbar-nav{
+	 margin: 0 30%;
+	 position: fixed;
+}
+
+.fas {
+	margin-right: 10px;
+}
+
+.sair{
+	position: fixed;
+    right: 5px;
+    width: 6em;
+}
+

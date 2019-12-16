@@ -50,24 +50,21 @@ function Mensagem_estrutura({key,titulo,nivel,protocolo,data,setor,email,status,
     var setMensagem_p_tecnico;
     var setConfigDisp;
     var setConfigPend;
-    var idtecnico;
+    var id_tecnico=useSelector(state => state.userEmail)
 
 // function id_tecnico_aceito(){
-// firebase.database().ref().child('mensagem/'+key).update({idtecnico : useSelector(state => state.usuarioEmail)})
+// firebase.database().ref().child('mensagem/'+key).update({idtecnico : id_tecnico})
 // }
 
 // function id_tecnico_suspenso(){
 //     firebase.database().ref().child('mensagem/'+key).update({idtecnico : ""})}
-
-var id_tecnico_suspenso
-
-var id_tecnico_aceito
+// onClick={id_tecnico_suspenso()}
 
     if(status!==null){
 
         if(status==="disponivel"){
-            setStatus_button1=<button onClick={id_tecnico_suspenso} className="mt-3 mx-3 font-weight-bold btn btn-center btn-suspender" type="button">Suspender</button>
-            setStatus_button2=<button onClick={id_tecnico_aceito} className="mt-3 mx-3 font-weight-bold btn btn-center btn-aceitar" type="button">Aceitar</button>
+            setStatus_button1=<button  className="mt-3 mx-3 font-weight-bold btn btn-center btn-suspender" type="button">Suspender</button>
+            setStatus_button2=<button onClick={id_tecnico_aceito()} className="mt-3 mx-3 font-weight-bold btn btn-center btn-aceitar" type="button">Aceitar</button>
             setNiveis=setNivel
             setFormato="btn-mensagem mx-5 mt-5 row"
             setMensagem_p_tecnico=mensagem_p_tecnico

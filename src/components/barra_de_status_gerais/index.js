@@ -15,7 +15,6 @@ function Barra_de_status_gerais(){
             <li className="nav-item "><Link className="nav-link" to="/tecnico_suspensos">Suspensos </Link></li>
             <li className="nav-item "><Link className="nav-link" to="/tecnico_aceitos">Aceitos </Link></li>
             <li className="nav-item "><Link className="nav-link" to="/tecnico_arquivados">Arquivados </Link></li>
-            <li className="nav-item "><Link className="nav-link" to="/tecnico_solicitados">Solicitados </Link></li>
         </ul>
         </div>
         </nav>

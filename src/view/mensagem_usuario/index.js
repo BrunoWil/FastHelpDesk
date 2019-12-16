@@ -14,8 +14,8 @@ const [nivel, setNivel]=useState();
 const [setor, setSetor]=useState();
 const [data, setData]=useState();
 const [texto, setTexto]=useState();
+const [email]=useState(useSelector(state => state.userEmail));
 
-const email= useSelector(state => state.usuarioEmail)
 const protocolo="000000"+1 
 const status = "disponivel"
 

@@ -8,7 +8,7 @@ import FirebaseService from '../../view/services/FirebaseService'
 
 
 
-function Mensagens_Abertas({key,titulo,nivel,protocolo,data,setor,email,status,id_tecnico}){
+function Mensagens_Abertas({idkey,titulo,nivel,protocolo,data,setor,email,status,id_tecnico}){
 
     var setNivel;
 
@@ -32,43 +32,50 @@ function Mensagens_Abertas({key,titulo,nivel,protocolo,data,setor,email,status,i
     var setStatus_button1;
     var setStatus_button2;
     var	userEmail;
-
+console.log(idkey)
     userEmail=useSelector(state => state.userEmail)
-    alert(userEmail)
+    var nodePath='mensagem/'+idkey
+// console.log(nodePath)
 
+    function id_tecnico_aceito(){
+        var Sata ={
+            status:"pendente",
+            idtecnico:userEmail,
+        };
+        firebase.database().ref(nodePath).update(Sata);
+        
+    }
 
-;
-function id_tecnico_suspenso(){
+    function id_tecnico_diponivel(){
+        var Sata ={
+            status:"diponivel",
+            idtecnico:"",
+        };
+        firebase.database().ref(nodePath).update(Sata);
+    }
 
-    var Sata ={
-        idtecnico: userEmail,
-        status:"suspenso",
+    function id_tecnico_desarquivar(){
+        var Sata ={
+            status:"pendente",
+            idtecnico:userEmail,
+        };
+        firebase.database().ref(nodePath).update(Sata);
+    }
 
-    };
-        FirebaseService.updateData('mensagem/',key,Sata)
-}
-
-function id_tecnico_aceito(){
-    var Sata ={
-        idtecnico: userEmail,
-        status:"pendente",
-    };
-        FirebaseService.updateData('mensagem/',key,Sata)
-}
 
     if(status!==null){
 
         if(status==="disponivel"){
-            setStatus_button1=<button onClick={id_tecnico_suspenso()} className="mt-3 mx-3 font-weight-bold btn btn-center btn-suspender" type="button">Suspender</button>
-            setStatus_button2=<button onClick={id_tecnico_aceito()} className="mt-3 mx-3 font-weight-bold btn btn-center btn-aceitar" type="button">Aceitar</button>
+            setStatus_button1=<button  className="mt-3 mx-3 font-weight-bold btn btn-center btn-suspender" type="button">Suspender</button>
+            setStatus_button2=<button onClick={id_tecnico_aceito} className="mt-3 mx-3 font-weight-bold btn btn-center btn-aceitar" type="button">Aceitar</button>
         }
 
         if(status==="suspenso"){
-            setStatus_button1=<button onClick={id_tecnico_aceito()} className="mt-3 mx-3 font-weight-bold btn btn-center btn-disponivel" type="button">Disponibilizar</button>
+            setStatus_button1=<button onClick={id_tecnico_diponivel} className="mt-3 mx-3 font-weight-bold btn btn-center btn-disponivel" type="button">Disponibilizar</button>
         }
 
         if(status==="arquivado"){
-            setStatus_button1=<button onClick={id_tecnico_aceito()} className="mt-3 mx-3 font-weight-bold btn btn-center btn-arquivado" type="button">Desarquivar</button>
+            setStatus_button1=<button onClick={id_tecnico_desarquivar} className="mt-3 mx-3 font-weight-bold btn btn-center btn-arquivado" type="button">Desarquivar</button>
         }
     }
 

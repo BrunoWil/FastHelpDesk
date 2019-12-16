@@ -22,16 +22,16 @@ class Tecnico_aceitos extends Component {
   
   componentDidMount(){
     FirebaseService.getDataList('mensagem/','pendente', (dataReceived) => this.setState({pendente: dataReceived}))
-    FirebaseService.getDataList('mensagem/','resolvendo', (dataReceived) => this.setState({resolvendo: dataReceived}))
-    FirebaseService.getDataList('mensagem/','resolvido', (dataReceived) => this.setState({resolvido: dataReceived}))
+    // FirebaseService.getDataList('mensagem/','resolvendo', (dataReceived) => this.setState({resolvendo: dataReceived}))
+    // FirebaseService.getDataList('mensagem/','resolvido', (dataReceived) => this.setState({resolvido: dataReceived}))
 
 
   }
   
 render(){
 console.log(this.state.pendente)
-console.log(this.state.resolvendo)
-console.log(this.state.resolvido)
+// console.log(this.state.resolvendo)
+// console.log(this.state.resolvido)
     return(
       <>
       <Navbar/>
@@ -57,7 +57,7 @@ console.log(this.state.resolvido)
             </div>
 
             <div>      
-                {this.state.resolvendo.map((item,index)=>
+                {/* {this.state.resolvendo.map((item,index)=>
                 <div  key={index}>
                 <Mensagem_estrutura 
                     key={index}
@@ -70,12 +70,12 @@ console.log(this.state.resolvido)
                     status={item.status} 
                     id_tecnico={item.idtecnico}/>
               </div>)
-              }
+              } */}
 
             </div>
 
-            <div>
-                {this.state.resolvido.map((item,index)=>
+             <div>
+                {/* {this.state.resolvido.map((item,index)=>
                   <div key={index}>
                   <Mensagem_estrutura 
                       key={index}
@@ -88,9 +88,9 @@ console.log(this.state.resolvido)
                       status={item.status} 
                       id_tecnico={item.idtecnico}/>
                 </div>)
-                }
+                } */}
 
-            </div>
+            </div> 
       
       </>
         );

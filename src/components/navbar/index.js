@@ -29,7 +29,7 @@ function NavBar() {
 				        <Link className="nav-link" to="/perfil"><i class="fas fa-user"></i>Perfil</Link>
 				      </li>
 				      <li className="nav-item">
-				        <Link className="nav-link sair" onClick={() => dispatch({type: 'LOG_OUT'})}>Sair</Link>
+				        <Link className="nav-link sair" onClick={() => dispatch({type: 'LOG_OUT'} )} to="/">Sair</Link>
 				      </li>
 				    </ul>
 				  </div>

@@ -2,7 +2,7 @@ const INITIAL_STATE = {
 	userEmail: '',
 	userLogado: 0,
 
-};
+}; 
 
 function userReducer(state =INITIAL_STATE, action){
 	switch(action.type){

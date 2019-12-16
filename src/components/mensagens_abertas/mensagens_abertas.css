@@ -1,0 +1,180 @@
+.btn-mensagem{
+    position: absolute;
+    border-radius: 10px;
+
+
+background: #9DD7B8;
+}
+
+
+.btn-solicitados{
+    text-transform: uppercase;
+    background-color: #614ea6;
+    color: white;
+    width: 120pt;
+    height: 20pt;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 20px;
+}
+
+
+.btn-solicitados:hover{
+    background-color: green;
+    color: #fff;
+    transition: .3s ease-in;
+}
+.btn-aceitar{
+    text-transform: uppercase;
+    background-color: #614ea6;
+    color: white;
+    width: 120pt;
+    height: 20pt;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 20px;
+}
+
+
+.btn-aceitar:hover{
+    background-color: green;
+    color: #fff;
+    transition: .3s ease-in;
+}
+.btn-arquivado{
+    text-transform: uppercase;
+    background-color: #614ea6;
+    color: white;
+    width: 120pt;
+    height: 20pt;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 20px;
+}
+
+
+.btn-arquivado:hover{
+    background-color: green;
+    color: #fff;
+    transition: .3s ease-in;
+}
+
+.btn-suspender{
+    text-transform: uppercase;
+    background-color: #614ea6;
+    color: white;
+    width: 120pt;
+    height: 20pt;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 20px;
+}
+
+
+.btn-suspender:hover{
+    background-color: green;
+    color: #fff;
+    transition: .3s ease-in;
+}
+
+.btn-disponivel{
+    text-transform: uppercase;
+    background-color: #614ea6;
+    color: white;
+    width: 120pt;
+    height: 20pt;
+    font-size: 15px;
+    line-height: 15px;
+    border-radius: 20px;
+}
+
+
+.btn-disponivel:hover{
+    background-color: green;
+    color: #fff;
+    transition: .3s ease-in;
+}
+
+.btn-nivel-u{
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    display: inline-flex;
+    align-items: flex-end;
+    text-align: center;
+    color: white;
+    background-color: red;
+    width: 70pt;
+    height: 20pt;
+
+
+}
+
+.btn-nivel-u:hover{
+    background-color: black;
+    color: #fff;
+    transition: .3s ease-in;
+}
+.btn-nivel-a{
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    display: inline-flex;
+    align-items: flex-end;
+    text-align: center;
+    color: white;
+    background-color: orange;
+    width: 70pt;
+    height: 20pt;
+}
+
+.btn-nivel-a:hover{
+    
+    background-color: black;
+    color: #fff;
+    transition: .3s ease-in;
+}
+.btn-nivel-m{
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    display: inline-flex;
+    align-items: flex-end;
+    text-align: center;
+    color: white;
+    background-color: yellow;
+    width: 70pt;
+    height: 20pt;
+}
+
+.btn-nivel-m:hover{
+    background-color: black;
+    color: #fff;
+    transition: .3s ease-in;
+}
+.btn-nivel-b{
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    display: inline-flex;
+    align-items: flex-end;
+    text-align: center;
+    color: white;
+    background-color: blue;
+    width: 70pt;
+    height: 20pt;
+}
+
+.btn-nivel-b:hover{
+    background-color: black;
+    color: #fff;
+    transition: .3s ease-in;
+}

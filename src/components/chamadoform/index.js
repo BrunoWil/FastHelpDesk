@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 import { useSelector} from 'react-redux'
 import firebase from '../../config/firebase';
 
-
+function CriarChamado(){
+	
+}
 
 function NewChamado(){
 	const [carregando, setCarregando] = useState()

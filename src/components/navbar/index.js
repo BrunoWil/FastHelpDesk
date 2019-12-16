@@ -1,12 +1,15 @@
 import React from 'react';
 import './navbar.css';
 import {Link, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import firebase from '../../config/firebase';
+import 'firebase/auth';
 
 
 function NavBar() {
 
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
+
 	return(
 		<>
 			<nav className="navbar navbar-expand-lg">
@@ -29,10 +32,12 @@ function NavBar() {
 				        <Link className="nav-link" to="/perfil"><i class="fas fa-user"></i>Perfil</Link>
 				      </li>
 				      <li className="nav-item">
-				        <Link className="nav-link sair" onClick={() => dispatch({type: 'LOG_OUT'})}>Sair</Link>
+				        <Link to='/' className="nav-link sair" onClick={() => dispatch( { type: 'LOG_OUT' } )}>Sair</Link>
 				      </li>
 				    </ul>
 				  </div>
+				  
+				
 
 			</nav>
 			

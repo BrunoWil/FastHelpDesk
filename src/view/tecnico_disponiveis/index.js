@@ -42,6 +42,7 @@ return(
       <div className="btn-mensagens text-center" key={index}>
       <Mensagens_Abertas 
           key={index}
+          idkey={item.key}
           titulo={item.titulo} 
           nivel={item.nivel} 
           protocolo={item.protocolo} 

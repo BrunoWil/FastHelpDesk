@@ -16,6 +16,7 @@ function TelaLogin(){
 	const dispatch = useDispatch();
 
 
+	
 	function Logar(){
 		firebase.auth().signInWithEmailAndPassword(email, senha).then(resultado =>{
 				setMsgTipo('aceito')
@@ -23,8 +24,14 @@ function TelaLogin(){
 		}).catch(erro =>{
 				setMsgTipo('erro')
 		});
-	
+	 
 	}
+
+	document.addEventListener('keydown', function(e) {
+		if(e.key == "Enter"){
+		  document.getElementById("loginButton").click();
+		}
+	});
 
 	return(
 		<div className="login-content d-flex align-itens-center">
@@ -40,7 +47,7 @@ function TelaLogin(){
 			    <input onChange={(e) => setEmail(e.target.value)} type="email" id="inputEmail" className="form-control my-2 rounded-pill" placeholder="Email" />	 
 			    <input onChange={(e) => setSenha(e.target.value)}type="password" id="inputPassword" className="form-control my-2 rounded-pill " placeholder="Senha" />
 	
-			  <button onClick={Logar} className="btn btn-lg btn-primary btn-block font-weight-bold rounded-pill" type="button">Entrar</button>
+			  <button onClick={Logar} id="loginButton" className="btn btn-lg btn-primary btn-block font-weight-bold rounded-pill" type="button">Entrar</button>
 			  
 			  <div className="msg-login text-white text-center my-1">
 			  
@@ -48,12 +55,7 @@ function TelaLogin(){
 			  	{msgTipo === 'erro' && <span>Acesso negado!!!</span>}
 			  </div>
 
-			  <div className="opcoes-login">
-			  	<a href="#" className="senhanovaly">Nova senha</a>
-			  	<br />
-			  	<span className="raio">&#9889;</span>
-			  </div>
-			</form>
+			  </form>
 		</div>
 		);
 }

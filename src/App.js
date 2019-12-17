@@ -20,6 +20,7 @@ import Tecnico_arquivados from './view/tecnico_arquivados';
 import Mensagem_usuario from './view/mensagem_usuario';
 import Tela_de_cadastro from './view/cadastrarUsuario/index';
 import Tela_de_cadastrados from './view/UsuariosCadastradosTecnico/index';
+import Tela_perfil_tecnico from './view/perfilTec/index';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
 
 
 			<Route exact path= '/inicio_tecnico' component={Home}/>
+			<Route exact path='/perfil_tecnico' component={Tela_perfil_tecnico} />
 			<Route exact path= '/tecnico_aceitos' component={Tecnico_aceitos}/>
 			<Route exact path= '/tecnico_disponiveis' component={Tecnico_disponiveis}/>
 			<Route exact path= '/tecnico_arquivados' component={Tecnico_arquivados}/>

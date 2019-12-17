@@ -18,6 +18,8 @@ import Tecnico_disponiveis from './view/tecnico_disponiveis';
 import Tecnico_suspensos from './view/tecnico_suspensos';
 import Tecnico_arquivados from './view/tecnico_arquivados';
 import Mensagem_usuario from './view/mensagem_usuario';
+import Tela_de_cadastro from './view/cadastrarUsuario/index';
+import Tela_de_cadastrados from './view/UsuariosCadastradosTecnico/index';
 
 function App() {
   return (
@@ -37,7 +39,9 @@ function App() {
 			<Route exact path= '/tecnico_arquivados' component={Tecnico_arquivados}/>
 			<Route exact path= '/tecnico_suspensos' component={Tecnico_suspensos}/>
 			<Route exact path= '/mensagem_usuario' component={Mensagem_usuario}/>
-
+			<Route exact path= '/novousuario' component={Tela_de_cadastro}/>
+			<Route exact path= '/cadastrados' component={Tela_de_cadastrados}/>
+ 
 			</Router>
 		</PersistGate>
 	</Provider>

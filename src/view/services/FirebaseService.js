@@ -44,6 +44,33 @@ export default class FirebaseService {
     };
 
 
+    static getDataListNoFilter = (nodePath,callback) => {
+
+        let query = firebase.database().ref(nodePath);
+        query.on('value', dataSnapshot => {
+            let items = [];
+            dataSnapshot.forEach(childSnapshot => {
+                let item = childSnapshot.val();
+                item['key'] = childSnapshot.key;
+                items.push(item);
+            });
+            callback(items);
+        });
+
+        return query;
+    };
+
+
+
+
+
+
+
+
+
+
+
+
 
     // static Categoria = (callback) => {
     //     const dispatch = useDispatch();

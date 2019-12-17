@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 import { useSelector} from 'react-redux'
 import firebase from '../../config/firebase';
 
-
+function CriarChamado(){
+	
+}
 
 function NewChamado(){
 	const [carregando, setCarregando] = useState()
@@ -76,9 +78,7 @@ function NewChamado(){
 		    <textarea onChange={(e) => setDesc(e.target.value)} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 		  </div>
 	
-		
-			 <button type="button" className="btn btn-primary my-5" id="bt1">Cancelar</button>
-			 <button onClick={abrirchamado} type="button" className="btn btn-primary my-3" id="bt2">Enviar</button>
+			<button type="button" className="btn btn-primary my-3" id="bt2">Enviar</button>
 	
 	  	
 

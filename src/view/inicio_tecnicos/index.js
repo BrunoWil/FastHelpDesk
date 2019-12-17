@@ -15,7 +15,7 @@ function Home(){
       <Navbar/>
       <Link to='#' className="btn btn-lg btn-block btn-" >Solicitações ao Administrador</Link>
       <Link to='#'  className="btn btn-lg btn-block btn-">Registros Patrimoniais</Link> 
-      <Link to='/novousuario' className="btn btn-lg btn-block btn-"> Cadastro de Usuarios</Link>
+      <Link to='/cadastrados'  className="btn btn-lg btn-block btn-"> Usuários</Link>
       <Link to='/tecnico_disponiveis' className="btn btn-lg btn-block btn-"> Chamados de Usuarios</Link>
       </>
         );

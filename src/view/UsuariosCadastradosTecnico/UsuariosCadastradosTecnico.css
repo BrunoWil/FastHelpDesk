@@ -27,15 +27,16 @@
 }
 
 .bt {
+    color: #ffffff;
     position: fixed; 
     right: 2%; 
     bottom: 0;
     z-index:10;
     background-color: #627894; 
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .bt:hover{
-        background-color: black;
+        background-color: #0000D4;
         color: #ffffff;
 }

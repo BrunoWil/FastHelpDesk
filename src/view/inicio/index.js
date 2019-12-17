@@ -7,7 +7,7 @@ import {useSelector} from 'react-redux';
 function Inicio() {
 	return(
 		<>
-		{useSelector(state => state.userEmail)}
+		{/* {useSelector(state => state.userEmail)} */}
 		<Navbar />
 		<ChamadoCard />
 		</>

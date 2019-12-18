@@ -1,33 +1,27 @@
-import React,{useState} from 'react';
+import React,{Component} from 'react';
 import './tecnico_arquivados.css';
 import Navbar from '../../components/navbar';
 import Barra_de_status_gerais from '../../components/barra_de_status_gerais';
-import { useSelector } from 'react-redux';
-import Mensagem_estrutura from '../../components/mensagem_estrutura';
+import Mensagens_Abertas from '../../components/mensagens_abertas';
+import FirebaseService from '../services/FirebaseService'
+import { useSelector, useDispatch} from 'react-redux';
 
+class Tecnico_arquivados extends Component {
 
-
-
-function Tecnico_arquivados(){
-
-const setTitulo ="Ajuda"
-const setNivel ="urgente"
-const setProtocolo ="000111"
-const setSetor ="Adm"
-const setData ="20/12/2019"
-const setEmail ="bruno@gmail.com"
-const setStatus ="arquivado"
-const setId_tecnico="bruno@gmail.com"
-
- 
-
- if (setStatus==="arquivado"){
-
-  var arquivado=[<div className='table text-center'>
-        <Mensagem_estrutura titulo={setTitulo} nivel={setNivel} protocolo={setProtocolo} setor={setSetor} data={setData} email={setEmail} status={setStatus} id_tecnico={setId_tecnico}/>
-    </div>]
+  constructor(props){
+    super(props);
+    this.state = {
+        data : [],
+        
+    };
+  }
+  
+componentDidMount(){
+  FirebaseService.getDataList('mensagem/','arquivado', (dataReceived) => this.setState({data: dataReceived}))
+  
 }
 
+render(){
 
 return(
     <>
@@ -42,12 +36,29 @@ return(
       <th scope="col"></th>
     </tr>
   </thead>
-</table>
-    {arquivado}
-    </div>
-
+  </table>
+ 
+      {this.state.data.map((item,index)=>
+      <div className="btn-mensagens text-center" key={index}>
+      <Mensagens_Abertas 
+          key={index}
+          idkey={item.key}
+          titulo={item.titulo} 
+          nivel={item.nivel} 
+          protocolo={item.protocolo} 
+          setor={item.setor} 
+          data={item.data} 
+          email={item.email} 
+          status={item.status} 
+          id_tecnico={item.idtecnico}
+          />
+</div>
+)}
+</div>
 </>
-)
-
+);
+}
 }
 export default Tecnico_arquivados;
+
+

@@ -48,7 +48,7 @@ console.log(idkey)
 
     function id_tecnico_diponivel(){
         var Sata ={
-            status:"diponivel",
+            status:"disponivel",
             idtecnico:"",
         };
         firebase.database().ref(nodePath).update(Sata);
@@ -60,13 +60,21 @@ console.log(idkey)
             idtecnico:userEmail,
         };
         firebase.database().ref(nodePath).update(Sata);
+
+    }
+    function id_tecnico_suspender(){
+        var Sata ={
+            status:"suspenso",
+            idtecnico:userEmail,
+        };
+        firebase.database().ref(nodePath).update(Sata);
     }
 
 
     if(status!==null){
 
         if(status==="disponivel"){
-            setStatus_button1=<button  className="mt-3 mx-3 font-weight-bold btn btn-center btn-suspender" type="button">Suspender</button>
+            setStatus_button1=<button onClick={id_tecnico_suspender} className="mt-3 mx-3 font-weight-bold btn btn-center btn-suspender" type="button">Suspender</button>
             setStatus_button2=<button onClick={id_tecnico_aceito} className="mt-3 mx-3 font-weight-bold btn btn-center btn-aceitar" type="button">Aceitar</button>
         }
 

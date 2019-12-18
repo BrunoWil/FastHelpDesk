@@ -12,9 +12,9 @@ function Barra_de_status_gerais(){
         <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
             <li className="nav-item "><Link className="nav-link" to="/tecnico_disponiveis">Disponiveis </Link></li>
-            <li className="nav-item "><Link className="nav-link" to="/tecnico_suspensos">Suspensos </Link></li>
             <li className="nav-item "><Link className="nav-link" to="/tecnico_aceitos">Aceitos </Link></li>
             <li className="nav-item "><Link className="nav-link" to="/tecnico_arquivados">Arquivados </Link></li>
+            <li className="nav-item "><Link className="nav-link" to="/tecnico_suspensos">Suspensos </Link></li>
         </ul>
         </div>
         </nav>

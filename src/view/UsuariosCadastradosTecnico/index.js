@@ -1,70 +1,30 @@
-import React, {Component} from 'react';
-import Navbar from '../../components/navbarTec/index';
+import React,{Component} from 'react';
 import '../UsuariosCadastradosTecnico/UsuariosCadastradosTecnico.css';
-import firebase from 'firebase';
-import '../../config/firebase';
+import Navbar from '../../components/navbarTec/index';
+import FirebaseService from '../services/FirebaseService'
 import { Link } from 'react-router-dom';
-import FirebaseService from '../services/FirebaseService';
 
-var database = firebase.database();
- 
-var list= [];
+class UsuariosCadastrados extends Component {
 
-
-
-
-var userData;
-
-//função que pega apenas um elemento
-function show2(userID){
-    var starCountRef = firebase.database().ref('users/'+ userID +'/');
-    starCountRef.on('value', function(snapshot) {
-        userData = snapshot.val();
-    });
+  constructor(props){
+    super(props);
+    this.state = {
+        data : [],
+        
+    };
+  }
+  
+componentDidMount(){
+  FirebaseService.getDataListNoFilter('users/',(dataReceived) => this.setState({data: dataReceived}))
+  
 }
 
+render(){
 
-
-
-//função quem mostra na tela
-function showScreen(user) {
-    return(
-        <div className="row">
-            <div className="col-md-3 themed-grid-col2">{user.username}</div>
-            <div className="col-md-3 themed-grid-col2">{user.email}</div>
-            <div className="col-md-3 themed-grid-col2">{user.tipo}</div>
-            <div className="col-md-3 themed-grid-col2">{user.setor}</div>
-        </div>
-    )
-}
-
-//criando função para poder retornar eles e mostrar na tela
-// function listaUsers(){
-//     FirebaseService.getDataList('users/', (dataReceived) => 
-//     this.ListeningStateChangedEvent({data: dataReceived})).map(showScreen())
-    
-// }
-
-
-function listaUsers(){
-    
-    firebase.database().ref('users/').once('value', function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-          var childKey = childSnapshot.key;
-          var childData= childSnapshot.val();
-          console.log(childData);
-        });
-      });
-      
-}
-
-
-function UsuariosCadastrados(){
-    var childData;
-
-    return(  
-        <div className="uc">
-            <Navbar></Navbar>
+return(
+    <>
+            <div className="uc">
+            <Navbar/>
             <h5 className="font-weight-bold text-white">Lista de Usuários</h5>
             <div className="row">
                 <div className="col-md-3 themed-grid-col font-weight-bold text-white">Nome</div>
@@ -72,20 +32,25 @@ function UsuariosCadastrados(){
                 <div className="col-md-3 themed-grid-col font-weight-bold text-white">Tipo de Usuário</div>
                 <div className="col-md-3 themed-grid-col font-weight-bold text-white">Setor</div>
             </div>
-            
+                    {this.state.data.map((item,index)=>
+            <div className="btn-mensagens text-center" key={index}>
+                    <div className="row"key={index}>
+                    <div className="col-md-3 themed-grid-col2">{item.username}</div>
+                    <div className="col-md-3 themed-grid-col2">{item.email}</div>
+                    <div className="col-md-3 themed-grid-col2">{item.tipo}</div>
+                    <div className="col-md-3 themed-grid-col2">{item.setor}</div>
+                </div>
+        </div>
+        )}
            
-           {listaUsers()}
-           
-
             <Link  type="button" className="bt btn-primary" to='/novousuario'>Cadastrar Usuário</Link>
             
-
         </div>
-        
-       
-
-    )
-
+ 
+</>
+);
 }
-
+}
 export default UsuariosCadastrados;
+
+

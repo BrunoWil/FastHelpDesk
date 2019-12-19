@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './tecnico_suspensos.css';
-import Navbar from '../../components/navbar';
+import Navbar from '../../components/navbarTec/index';
 import Barra_de_status_gerais from '../../components/barra_de_status_gerais';
 import Mensagens_Abertas from '../../components/mensagens_abertas';
 import FirebaseService from '../services/FirebaseService'

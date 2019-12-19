@@ -1,25 +1,65 @@
-import React, { useState , useEffect } from 'react';
-import {Link} from 'react-router-dom';
-import firebase from '../../config/firebase';
+import React from 'react';
+import {Component} from 'react';
 import './userperfil.css';
+import FirebaseService from '../../view/services/FirebaseService';
+import { useSelector } from 'react-redux'; 
+import  '../../config/firebase';
+import '../../view/login/index';
 
-function DadosUser(){
-	return(
-		<>
-        <form className="formulario">
-        	<div className="form-group"><label>Nome:</label></div>
+var i;
+var userEmail;
 
-		  	<div className="form-group"><label>Email:</label></div>
+class UsuariosCadastrados extends Component {
 
-		  	<div className="form-group"><label>Setor:</label></div>	
-		   
-		    <div className="form-group"><label>Função:</label></div>
+	constructor(props){
+	  super(props);
+	  this.state = {
+		  data : [],
+		  
+	  };
+	}
 	
-		</form>
-		
-		
-		</>
-		);
-}
+  componentDidMount(){
+	FirebaseService.getDataListNoFilter('users/',(dataReceived) => this.setState({data: dataReceived}))
+	
+  }
+  
+  
+  igual(lista){
+	userEmail = "lara@gmail.com";
+	
+	for (i = 0; i < lista.length; i++) {
+		if(lista[i].email===userEmail){
+			return(
+				
+				<form className="formulario">
+					<div className="form-group"><label><b>Nome:</b> {lista[i].username}</label></div>
 
-export default DadosUser;
+					<div className="form-group"><label><b>Email:</b> {lista[i].email}</label></div>
+
+					<div className="form-group"><label><b>Setor:</b> {lista[i].setor}</label></div>	
+				
+					<div className="form-group"><label><b>Tipo de usuário:</b> {lista[i].tipo}</label></div>
+				</form>
+		
+			)
+		}
+	}
+}
+  
+  render(){
+  
+  return(
+	  <>
+	  	
+		{console.log(this.state.data.length)}
+		{this.igual(this.state.data)}
+		
+		
+   
+  </>
+  );
+  }
+  }
+  export default UsuariosCadastrados;
+  

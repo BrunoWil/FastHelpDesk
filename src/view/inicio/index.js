@@ -5,9 +5,10 @@ import Navbar from '../../components/navbar/index';
 import ChamadoCard from '../../components/chamados-card/index';
 import {useSelector} from 'react-redux'; 
 function Inicio() {
+	
 	return(
 		<>
-		{/* {useSelector(state => state.userEmail)} */}
+		
 		<Navbar />
 		<ChamadoCard />
 		</>

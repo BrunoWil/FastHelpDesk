@@ -14,23 +14,19 @@ function NewChamado(){
 	const [titulo, setTitulo] = useState();
 	const [problema, setProblema] = useState();
 	const [setor, setSetor] = useState();
-	const [documento, setDoc] = useState();
 	const [descricao, setDesc] = useState();
 	const usuarioEmail = useSelector(state => state.userEmail);
 
-	const storage = firebase.storage();
 	const db = firebase.firestore();
 
 	function abrirchamado(){
 		setMsgTipo(null);
 		setCarregando(1);
-		storage.ref(`Documentos/${documento.name}`).put(documento).then(() => {
 			db.collection('chamados').add({
 				titulo: titulo,
 				problema: problema,
 				setor: setor,
 				descricao: descricao,
-				documento: documento.name,
 				user: usuarioEmail,
 				criacao: new Date()
 			}).then(() => {
@@ -40,8 +36,7 @@ function NewChamado(){
 			}).catch(erro => {
 			setMsgTipo("erro");
 			setCarregando(0);
-		});
-	});
+		});:
 	}
 
 	return(
@@ -68,10 +63,6 @@ function NewChamado(){
 		      <option>3</option>
 		      <option>4</option>
 		    </select>
-		  </div>
-		  <div className="form-group">
-		    <label for="exampleFormControlFile1"><i className="fas fa-paperclip"></i>Anexar Documento:</label>
-		    <input onChange={(e) => setDoc(e.target.files[0])} type="file" className="form-control-file" id="exampleFormControlFile1" />
 		  </div>
 		  <div className="form-group">
 		    <label for="exampleFormControlTextarea1">Descrição:</label>

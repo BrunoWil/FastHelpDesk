@@ -1,18 +1,15 @@
-import React from 'react';
-//import from './inicio.css';
-import {Link} from 'react-router-dom';
-import Navbar from '../../components/navbar/index';
-import ChamadoCard from '../../components/chamados-card/index';
-import {useSelector} from 'react-redux'; 
-function Inicio() {
-	
+import React,{useState,useEffect,Component} from 'react';
+import '../inicio/inicio.css';
+import NavBar from '../../components/navbar/index';
+import imagemLogo from '../../components/imagens/logo.png';
+
+function Inicio(){
 	return(
 		<>
+		<NavBar/>
 		
-		<Navbar />
-		<ChamadoCard />
 		</>
-		);
+	)
 }
-
 export default Inicio;
+

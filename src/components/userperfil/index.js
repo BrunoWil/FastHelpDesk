@@ -5,9 +5,11 @@ import FirebaseService from '../../view/services/FirebaseService';
 import { useSelector } from 'react-redux'; 
 import  '../../config/firebase';
 import '../../view/login/index';
+import '../../store/userReducer';
+import userReducer from '../../store/userReducer';
 
 var i;
-var userEmail;
+var userEmail="lara@gmail.com";
 
 class UsuariosCadastrados extends Component {
 
@@ -26,7 +28,7 @@ class UsuariosCadastrados extends Component {
   
   
   igual(lista){
-	userEmail = "lara@gmail.com";
+	//userEmail = "lara@gmail.com";
 	
 	for (i = 0; i < lista.length; i++) {
 		if(lista[i].email===userEmail){

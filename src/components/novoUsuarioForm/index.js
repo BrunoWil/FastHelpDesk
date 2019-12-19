@@ -16,14 +16,27 @@ class User{
     }
 }
 
-function writeUserData(user, userID) {
-	firebase.database().ref('users/'+ userID +'/').set({
+// var Sata ={
+// 	titulo:titulo,
+// 	nivel:nivel,
+// 	protocolo:protocolo,
+// 	setor:setor,
+// 	data:data,
+// 	email:email,
+// 	status:status,
+// 	idtecnico:"",
+// 	texto:texto,
+// };
+// return firebase.database().ref().child('mensagem').push(Sata);}
+
+function writeUserData(user) {
+	var Sata = {
 	  username: user.name,
 	  email: user.email,
 	  tipo: user.tipo,
 	  setor: user.setor,
-	  senha: user.senha
-	});
+	  senha: user.senha};
+	  return firebase.database().ref().child('users').push(Sata);
   }
 
 
@@ -64,7 +77,7 @@ function NewUsuario(){
 			firebase.auth().createUserWithEmailAndPassword(email, senha).then( resultado => { 
 				setCarregando(0)
 				setMsgTipo('sucesso')
-				writeUserData(user1, nome+senha)
+				writeUserData(user1)
 			}).catch( erro => {
 				setCarregando(0)
 				setMsgTipo('erro')
@@ -95,7 +108,7 @@ function NewUsuario(){
         <form className="formulario">
 
 		  <div className="form-group">
-		    <label for="formGroupExampleInput">Digite o nome completo do usuário:</label>
+		    <label for="formGroupExampleInput">Digite o nome do usuário:</label>
 		    <input onChange={(e) => setNome(e.target.value)} type="text" className="form-control"/>
 		  </div>
 

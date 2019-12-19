@@ -29,9 +29,6 @@ function NavBar() {
 				        <Link className="nav-link" to="/cadastrados">Usuários</Link>
 				      </li>
 				      <li className="nav-item">
-				        <Link className="nav-link" to="#">Dúvidas</Link>
-				      </li>
-				      <li className="nav-item">
 				        <Link className="nav-link" to="/perfil_tecnico"><i class="fas fa-user"></i>Perfil</Link>
 				      </li>
                       

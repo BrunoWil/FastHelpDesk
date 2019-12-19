@@ -49,14 +49,10 @@ function NewChamado(){
 	const [msgTipo, setMsgTipo] = useState();
 	const [titulo, setTitulo] = useState();
 	const [setor, setSetor] = useState();
-	const [descriçao, setDesc] = useState();
-	const [protocolo, setProto] = useState();
-	const [data, setData] = useState();
-	const [Urg, setUrg] = useState();
-	const status="disponível";
+	const [descricao, setDesc] = useState();
+
 	const usuarioEmail = useSelector(state => state.userEmail);
 
-	const storage = firebase.storage();
 	const db = firebase.firestore();
 
 	// function abrirchamado(){
@@ -81,6 +77,7 @@ function NewChamado(){
 	// 	});
 	// });
 	// }
+
 
 	return(
 		<>
@@ -132,6 +129,8 @@ function NewChamado(){
 		  </div>
 
 		  <div className="form-group">
+
+
 		    <label for="exampleFormControlTextarea1">Descrição:</label>
 		    <textarea onChange={(e) => setDesc(e.target.value)} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 		  </div>

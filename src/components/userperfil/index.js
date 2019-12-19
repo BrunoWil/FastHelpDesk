@@ -9,7 +9,7 @@ import '../../store/userReducer';
 import userReducer from '../../store/userReducer';
 
 var i;
-var userEmail="lara@gmail.com";
+var userEmail="beatriz@gmail.com";
 
 class UsuariosCadastrados extends Component {
 

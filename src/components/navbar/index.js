@@ -23,7 +23,7 @@ function NavBar() {
 				        <Link className="nav-link" to="/inicio"><i class="fas fa-home"></i>Início</Link>
 				        </li>
 				      <li className="nav-item">
-				        <Link className="nav-link" to="/novochamado"><i class="fas fa-plus"></i>Chamado</Link>
+				        <Link className="nav-link" to="/mensagem_usuario"><i class="fas fa-plus"></i>Chamado</Link>
 				      </li>
 				      <li className="nav-item">
 				        <Link className="nav-link" to="#">Dúvidas</Link>

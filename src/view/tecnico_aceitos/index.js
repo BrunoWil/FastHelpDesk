@@ -1,6 +1,6 @@
 import React,{useState,useEffect,Component} from 'react';
 import './tecnico_aceitos.css';
-import Navbar from '../../components/navbar'
+import Navbar from '../../components/navbarTec/index'
 import { useSelector } from 'react-redux';
 import Barra_de_status_de_mensagem from '../../components/barra_de_status_de_mensagem'
 import Mensagem_estrutura from '../../components/mensagem_filtradas'
